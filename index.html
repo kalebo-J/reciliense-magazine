@@ -5,7 +5,615 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Resilience Magazine | Caleb Nyakwara</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Reset and basics */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  font-size: 16px;
+}
+
+.page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4vw;
+  max-width: 960px;
+  margin: 0 auto;
+  min-height: auto;
+}
+
+.intro-page {
+  max-width: 100%;
+  background: #fff;
+  padding: 3rem 4rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  line-height: 1.6;
+  color: #222;
+}
+
+.intro-page h1 {
+  font-weight: 600;
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  color: #03053a;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.intro-page p {
+  font-weight: 300;
+  font-size: 1.15rem;
+  margin-bottom: 1.25rem;
+  text-align: justify;
+}
+
+@media (max-width: 400px) {
+  .intro-page {
+    padding: 2rem 1.5rem;
+  }
+  .intro-page h1 {
+    font-size: 2rem;
+  }
+  .intro-page p {
+    font-size: 1rem;
+  }
+}
+
+/* Alternate pages background */
+.page:nth-child(even) {
+  background: #eca8a8;
+}
+
+/* Specific styling for pages with class .pagen */
+.pagen {
+  background: #eca8a8;
+  height: auto;
+  min-height: auto;
+}
+
+/* Headings */
+.page h1,
+.page h2 {
+  margin-bottom: 1rem;
+  color: #03053a;
+}
+
+.page h1 {
+  font-size: 3rem;
+}
+
+.pagen h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.page h2 {
+  font-size: 2rem;
+}
+
+.page p {
+  font-size: 1.1rem;
+  line-height: 1.4;
+  max-width: 800px;
+  margin-bottom: 1rem;
+}
+
+/* Cover section */
+.cover {
+  background: linear-gradient(to right, #2c3e50, #4ca1af),
+              url('Mystory.png') no-repeat center center / cover;
+  background-blend-mode: multiply;
+  color: #fff;
+  text-align: center;
+  padding: 6rem 2rem;
+}
+
+.cover h1 {
+  font-size: 4rem;
+}
+
+/* Image styles */
+.image {
+  height: 40vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  margin: 2rem 0;
+}
+
+/* Overlay text */
+.full-overlay {
+  position: relative;
+  width: 100%;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-full {
+  position: relative;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  padding: 4vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay-text {
+  background-color: rgba(255, 255, 255, 0.85);
+  color: #03053a;
+  padding: 2rem 3rem;
+  max-width: 900px;
+  border-radius: 10px;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  overflow-y: auto;
+  max-height: 75vh;
+  margin: auto;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.overlay-text p {
+  margin-bottom: 1.4rem;
+}
+
+.overlay-text::-webkit-scrollbar {
+  width: 8px;
+}
+
+.overlay-text::-webkit-scrollbar-thumb {
+  background-color: rgba(12, 36, 61, 0.3);
+  border-radius: 4px;
+}
+
+/* Split section layout */
+.split-section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 3rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.split-section .text {
+  flex: 1;
+  min-width: 280px;
+}
+
+.split-section .image-side {
+  flex: 1;
+  min-width: 280px;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+}
+
+.split-section.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Floats */
+.float-left {
+  float: left;
+  width: 250px;
+  margin: 0 1.5rem 1rem 0;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.float-right {
+  float: right;
+  width: 250px;
+  margin: 0 0 1rem 1.5rem;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Message box */
+.message-box {
+  background-color: #fff3f3;
+  padding: 2rem;
+  border-left: 6px solid #d9534f;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* Loneliness section */
+.loneliness-display {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.lonely-image {
+  flex: 1;
+  min-width: 260px;
+  height: 360px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.lonely-text {
+  flex: 2;
+  min-width: 280px;
+  padding: 1.5rem;
+  background-color: #f3f4f6;
+  border-left: 5px solid #2c3e50;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  color: #03053a;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* Full background container */
+.full-background {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 6vw 4vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* SMS box */
+.sms-box {
+  background-color: #fdfcf8ab;
+  color: #470202;
+  font-weight: bold;
+  padding: 2rem 2.5rem;
+  border-left: 4px solid #000;
+  border-radius: 12px;
+  max-width: 800px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  backdrop-filter: blur(2px);
+}
+
+/* Discipline section */
+.discipline-section {
+  background-image: url('DSC_7594.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.discipline-overlay {
+  background-color: rgba(9, 6, 63, 0.753);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4vw;
+  border-radius: 20px;
+}
+
+.discipline-quote-box {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 2.5rem;
+  max-width: 700px;
+  text-align: center;
+  border-left: 6px solid #000;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+
+.discipline-quote-box h1 {
+  font-size: 2.8rem;
+  color: #111;
+  margin-bottom: 1rem;
+}
+
+.discipline-quote-box p {
+  font-size: 1.2rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Street section */
+.street-section {
+  background-image: url('https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=1600&q=80');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.street-text {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 2rem 3rem;
+  max-width: 700px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  font-size: 1.15rem;
+  color: #03053a;
+  text-align: center;
+}
+
+/* Financial survival section */
+.financial-survival {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr;
+  gap: 2rem;
+  padding: 4vw;
+  background: #fefefe;
+  max-width: 960px;
+  margin: 0 auto;
+  border-radius: 12px;
+}
+
+.financial-survival .left-column {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 2rem;
+  color: #000;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.financial-survival .middle-column,
+.financial-survival .right-column {
+  background-color: #f26b64;
+  color: #fff;
+  padding: 2rem 1rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.financial-image {
+  height: 300px;
+  background-image: url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80');
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  margin: 1rem 0;
+}
+
+/* Emotional IQ section */
+.emotional-iq-section {
+  display: flex;
+  gap: 4vw;
+  align-items: center;
+  padding: 4vw;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.emotional-image {
+  height: 400px;
+  flex: 1;
+  border-radius: 12px;
+  background-image: url('https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=800&q=80');
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.emotional-text {
+  flex: 1.5;
+  background-color: #f8f8f8;
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #222;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+}
+
+/* Healing section */
+.healing-section {
+  background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80');
+  background-size: cover;
+  background-position: center;
+  padding: 6vw 4vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem;
+  min-height: 600px;
+  border-radius: 12px;
+}
+
+.healing-content {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 3rem 4rem;
+  border-radius: 15px;
+  max-width: 700px;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  font-weight: 400;
+  color: #03053a;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Bubbles styling in healing section */
+.bubbles {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-end;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+.bubble {
+  border-radius: 50%;
+  background-color: #ff6464;
+  box-shadow: 0 0 25px rgba(255, 100, 100, 0.75);
+  transition: all 0.5s ease;
+}
+
+.bubble.large {
+  width: 160px;
+  height: 160px;
+  margin-top: -40px;
+}
+
+.bubble.medium {
+  width: 120px;
+  height: 120px;
+  margin-top: -20px;
+}
+
+.bubble.small {
+  width: 80px;
+  height: 80px;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Smaller devices adjustments */
+@media (max-width: 900px) {
+  .financial-survival {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+  }
+  .financial-survival .middle-column,
+  .financial-survival .right-column {
+    background-color: inherit;
+    color: inherit;
+    padding: 1rem 0;
+    box-shadow: none;
+    font-size: 1rem;
+    text-align: left;
+  }
+  .financial-image {
+    height: 180px;
+    margin: 1rem auto;
+  }
+  .emotional-iq-section {
+    flex-direction: column;
+    padding: 2rem;
+  }
+  .emotional-image {
+    height: 280px;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  .split-section {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .split-section .image-side,
+  .split-section .text {
+    min-width: 100%;
+  }
+  .discipline-section {
+    height: auto;
+    padding: 3rem 2rem;
+  }
+  .discipline-overlay {
+    border-radius: 12px;
+    padding: 2rem;
+  }
+  .healing-section {
+    flex-direction: column;
+    padding: 3rem 2rem;
+    min-height: auto;
+  }
+  .bubbles {
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 0;
+    margin-top: 1rem;
+  }
+  .bubble.large {
+    width: 120px;
+    height: 120px;
+    margin-top: 0;
+  }
+  .bubble.medium {
+    width: 90px;
+    height: 90px;
+  }
+  .bubble.small {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+/* Prevent vh overflow on very short screens */
+@media (max-height: 500px) {
+  .page,
+  .pagen,
+  .discipline-section,
+  .street-section {
+    height: auto !important;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}
+
+/* Typography scaling for very small devices */
+@media (max-width: 400px) {
+  body, html {
+    font-size: 14px;
+  }
+  .intro-page h1,
+  .page h1,
+  .discipline-quote-box h1,
+  .street-text,
+  .emotional-text,
+  .healing-content {
+    font-size: 1.8rem !important;
+  }
+  .intro-page p,
+  .page p,
+  .discipline-quote-box p,
+  .street-text p,
+  .emotional-text p,
+  .healing-content p {
+    font-size: 1rem !important;
+  }
+}
+
+/* Hide scrollbar for overlay text on touch devices */
+@media (hover: none) {
+  .overlay-text::-webkit-scrollbar {
+    display: none;
+  }
+}
+    </style>
 </head>
 <body>
 
