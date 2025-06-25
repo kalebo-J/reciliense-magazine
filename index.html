@@ -6,7 +6,6 @@
   <title>Resilience Magazine | Caleb Nyakwara</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
   <style>
-    /* Reset and basics */
 * {
   margin: 0;
   padding: 0;
@@ -19,71 +18,68 @@ body, html {
   font-family: 'Montserrat', sans-serif;
   background-color: #f9f9f9;
   color: #333;
-  font-size: 16px;
 }
 
 .page {
+  height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 4vw;
-  max-width: 960px;
-  margin: 0 auto;
-  min-height: auto;
 }
 
 .intro-page {
-  max-width: 100%;
-  background: #fff;
-  padding: 3rem 4rem;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  line-height: 1.6;
-  color: #222;
+      max-width: 100%;
+      background: #fff;
+      padding: 3rem 4rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      line-height: 1.6;
+      color: #222;
+    }
+    .intro-page h1 {
+      font-weight: 600;
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      color: #03053a;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+    .intro-page p {
+      font-weight: 300;
+      font-size: 1.15rem;
+      margin-bottom: 1.25rem;
+      text-align: justify;
+    }
+    @media (max-width: 400px) {
+      .intro-page {
+        padding: 2rem 1.5rem;
+      }
+      .intro-page h1 {
+        font-size: 2rem;
+      }
+      .intro-page p {
+        font-size: 1rem;
+      }
+    }
+
+.pagen {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4vw;
 }
 
-.intro-page h1 {
-  font-weight: 600;
-  font-size: 3rem;
-  margin-bottom: 1.5rem;
-  color: #03053a;
-  text-align: center;
-  letter-spacing: 1px;
-}
-
-.intro-page p {
-  font-weight: 300;
-  font-size: 1.15rem;
-  margin-bottom: 1.25rem;
-  text-align: justify;
-}
-
-@media (max-width: 400px) {
-  .intro-page {
-    padding: 2rem 1.5rem;
-  }
-  .intro-page h1 {
-    font-size: 2rem;
-  }
-  .intro-page p {
-    font-size: 1rem;
-  }
-}
-
-/* Alternate pages background */
 .page:nth-child(even) {
   background: #eca8a8;
 }
-
-/* Specific styling for pages with class .pagen */
 .pagen {
   background: #eca8a8;
-  height: auto;
-  min-height: auto;
 }
 
-/* Headings */
 .page h1,
 .page h2 {
   margin-bottom: 1rem;
@@ -93,10 +89,10 @@ body, html {
 .page h1 {
   font-size: 3rem;
 }
-
 .pagen h1 {
   font-size: 3rem;
   margin-bottom: 10px;
+  color: #03053a;
 }
 
 .page h2 {
@@ -105,26 +101,22 @@ body, html {
 
 .page p {
   font-size: 1.1rem;
-  line-height: 1.4;
+  line-height: 1.1;
   max-width: 800px;
-  margin-bottom: 1rem;
 }
 
-/* Cover section */
 .cover {
   background: linear-gradient(to right, #2c3e50, #4ca1af),
               url('Mystory.png') no-repeat center center / cover;
   background-blend-mode: multiply;
   color: #fff;
   text-align: center;
-  padding: 6rem 2rem;
 }
 
 .cover h1 {
   font-size: 4rem;
 }
 
-/* Image styles */
 .image {
   height: 40vh;
   width: 100%;
@@ -133,8 +125,6 @@ body, html {
   border-radius: 10px;
   margin: 2rem 0;
 }
-
-/* Overlay text */
 .full-overlay {
   position: relative;
   width: 100%;
@@ -164,17 +154,16 @@ body, html {
   font-size: 1.15rem;
   line-height: 1.6;
   overflow-y: auto;
-  max-height: 75vh;
+  max-height: 75vh; /* restrict height */
   margin: auto;
   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
 .overlay-text p {
-  margin-bottom: 1.4rem;
+  margin-bottom: 1.4rem; /* add spacing between paragraphs */
 }
-
 .overlay-text::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 .overlay-text::-webkit-scrollbar-thumb {
@@ -182,7 +171,7 @@ body, html {
   border-radius: 4px;
 }
 
-/* Split section layout */
+
 .split-section {
   display: flex;
   flex-direction: row;
@@ -210,7 +199,6 @@ body, html {
   flex-direction: row-reverse;
 }
 
-/* Floats */
 .float-left {
   float: left;
   width: 250px;
@@ -227,7 +215,6 @@ body, html {
   object-fit: cover;
 }
 
-/* Message box */
 .message-box {
   background-color: #fff3f3;
   padding: 2rem;
@@ -236,7 +223,6 @@ body, html {
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
-/* Loneliness section */
 .loneliness-display {
   display: flex;
   gap: 2rem;
@@ -267,7 +253,6 @@ body, html {
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
-/* Full background container */
 .full-background {
   background-size: cover;
   background-position: center;
@@ -279,7 +264,6 @@ body, html {
   min-height: 100vh;
 }
 
-/* SMS box */
 .sms-box {
   background-color: #fdfcf8ab;
   color: #470202;
@@ -294,7 +278,6 @@ body, html {
   backdrop-filter: blur(2px);
 }
 
-/* Discipline section */
 .discipline-section {
   background-image: url('DSC_7594.jpg');
   background-size: cover;
@@ -305,10 +288,11 @@ body, html {
   display: flex;
   align-items: center;
   justify-content: center;
+  
 }
 
 .discipline-overlay {
-  background-color: rgba(9, 6, 63, 0.753);
+  background-color: rgba(9, 6, 63, 0.646); /* slightly dark, but transparent */
   width: 100%;
   height: 100%;
   display: flex;
@@ -340,7 +324,6 @@ body, html {
   line-height: 1.6;
 }
 
-/* Street section */
 .street-section {
   background-image: url('https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=1600&q=80');
   background-size: cover;
@@ -352,268 +335,404 @@ body, html {
   justify-content: center;
 }
 
-.street-text {
-  background-color: rgba(255, 255, 255, 0.85);
-  padding: 2rem 3rem;
-  max-width: 700px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  font-size: 1.15rem;
-  color: #03053a;
-  text-align: center;
-}
-
-/* Financial survival section */
-.financial-survival {
-  display: grid;
-  grid-template-columns: 3fr 1fr 1fr;
-  gap: 2rem;
-  padding: 4vw;
-  background: #fefefe;
-  max-width: 960px;
-  margin: 0 auto;
-  border-radius: 12px;
-}
-
-.financial-survival .left-column {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-  font-size: 2rem;
-  color: #000;
-  padding: 0 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.financial-survival .middle-column,
-.financial-survival .right-column {
-  background-color: #f26b64;
-  color: #fff;
-  padding: 2rem 1rem;
-  border-radius: 10px;
+.street-overlay {
+  background-color: rgba(0, 0, 0, 0.5); /* dark filter for readability */
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
-  font-size: 1.25rem;
+  padding: 4vw;
+}
+
+.street-text {
+  color: #fff;
+  text-align: center;
+  max-width: 800px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.street-text h1 {
+    color: #fff;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.street-text p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.silence-strategy-box {
+  background-color: #f8f8f8;
+  padding: 2rem;
+  border-left: 6px solid #333;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  color: #111;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+
+.financial-survival {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0;
+  width: 100%;
+  padding: 2rem 0;
+  box-sizing: border-box;
+}
+
+.column {
+  box-sizing: border-box;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.left-column {
+  background-color: #f9f9f9; /* magazine original theme */
 }
 
 .financial-image {
-  height: 300px;
-  background-image: url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80');
+  height: 240px;
+  width: 100%;
   background-size: cover;
   background-position: center;
-  border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  margin: 1rem 0;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
 }
 
-/* Emotional IQ section */
-.emotional-iq-section {
-  display: flex;
-  gap: 4vw;
-  align-items: center;
-  padding: 4vw;
-  max-width: 960px;
+.financial-intro h2 {
+  font-size: 1.8rem;
+  color: #03053a;
+  margin-bottom: 0.7rem;
+}
+
+.financial-intro p {
+  font-size: 1.05rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+.middle-column,
+.right-column {
+  background-color: #000;
+  color: #fff;
+  justify-content: center;
+}
+
+.financial-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 90%;
   margin: 0 auto;
 }
 
-.emotional-image {
-  height: 400px;
-  flex: 1;
-  border-radius: 12px;
-  background-image: url('https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=800&q=80');
-  background-size: cover;
-  background-position: center;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+/* Responsive tweak */
+@media (max-width: 900px) {
+  .financial-survival {
+    grid-template-columns: 1fr;
+  }
+  .middle-column,
+  .right-column {
+    background-color: inherit;
+    color: inherit;
+  }
+  .column {
+    padding: 1.5rem 1rem;
+  }
+  .financial-text {
+    max-width: 100%;
+  }
+}
+
+.emotional-iq-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4vw;
+  background-color: #f9f9f9;
+  gap: 2rem;
 }
 
 .emotional-text {
-  flex: 1.5;
-  background-color: #f8f8f8;
-  padding: 3rem 2rem;
-  border-radius: 12px;
-  font-weight: 400;
-  font-size: 1.2rem;
-  line-height: 1.6;
-  color: #222;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+  color: #03053a;
 }
 
-/* Healing section */
-.healing-section {
-  background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80');
+.emotional-text h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.emotional-text p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.emotional-image {
+  flex: 1;
+  min-width: 300px;
+  height: 550px;
   background-size: cover;
   background-position: center;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.healing-section {
+  position: relative;
   padding: 6vw 4vw;
+  background-color: #f9f9f9;
+  overflow: hidden;
+  color: #03053a;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 3rem;
-  min-height: 600px;
-  border-radius: 12px;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 350px;
 }
 
 .healing-content {
-  background-color: rgba(255, 255, 255, 0.85);
-  padding: 3rem 4rem;
-  border-radius: 15px;
-  max-width: 700px;
-  font-size: 1.15rem;
-  line-height: 1.6;
-  font-weight: 400;
-  color: #03053a;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  max-width: 600px;
+  z-index: 2;
+  position: relative;
 }
 
-/* Bubbles styling in healing section */
+.healing-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.healing-content p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 90%;
+}
+
+/* Bubble styles */
 .bubbles {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
   display: flex;
-  gap: 3rem;
+  flex-direction: column;
   align-items: flex-end;
-  justify-content: center;
-  flex-wrap: nowrap;
+  gap: 2rem;
+  padding: 2rem;
+  z-index: 1;
 }
 
 .bubble {
+  background-size: cover;
+  background-position: center;
   border-radius: 50%;
-  background-color: #ff6464;
-  box-shadow: 0 0 25px rgba(255, 100, 100, 0.75);
-  transition: all 0.5s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.4);
 }
 
 .bubble.large {
-  width: 160px;
-  height: 160px;
+  width: 250px;
+  height: 250px;
   margin-top: -40px;
 }
 
 .bubble.medium {
-  width: 120px;
-  height: 120px;
-  margin-top: -20px;
+  width: 150px;
+  height: 150px;
 }
 
 .bubble.small {
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
 }
 
-/* Media Queries for Responsiveness */
+.bubble:hover {
+  opacity: 1;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.4);
+}
 
-/* Smaller devices adjustments */
-@media (max-width: 900px) {
-  .financial-survival {
-    grid-template-columns: 1fr;
-    padding: 2rem;
-  }
-  .financial-survival .middle-column,
-  .financial-survival .right-column {
-    background-color: inherit;
-    color: inherit;
-    padding: 1rem 0;
-    box-shadow: none;
-    font-size: 1rem;
-    text-align: left;
-  }
-  .financial-image {
-    height: 180px;
-    margin: 1rem auto;
-  }
-  .emotional-iq-section {
-    flex-direction: column;
-    padding: 2rem;
-  }
-  .emotional-image {
-    height: 280px;
-    width: 100%;
-    margin-bottom: 1rem;
-  }
-  .split-section {
-    flex-direction: column;
-    gap: 2rem;
-  }
-  .split-section .image-side,
-  .split-section .text {
-    min-width: 100%;
-  }
-  .discipline-section {
-    height: auto;
-    padding: 3rem 2rem;
-  }
-  .discipline-overlay {
-    border-radius: 12px;
-    padding: 2rem;
-  }
+/* Responsive adjustments */
+@media (max-width: 768px) {
   .healing-section {
     flex-direction: column;
-    padding: 3rem 2rem;
+    align-items: flex-start;
     min-height: auto;
+    padding-bottom: 8vw;
   }
+
   .bubbles {
-    justify-content: center;
-    gap: 1.5rem;
+    position: static;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 1rem;
     padding: 0;
-    margin-top: 1rem;
+    margin-top: 2rem;
+    width: 100%;
   }
+
   .bubble.large {
     width: 120px;
     height: 120px;
     margin-top: 0;
   }
+
   .bubble.medium {
     width: 90px;
     height: 90px;
   }
+
   .bubble.small {
     width: 60px;
     height: 60px;
   }
-}
 
-/* Prevent vh overflow on very short screens */
-@media (max-height: 500px) {
-  .page,
-  .pagen,
-  .discipline-section,
-  .street-section {
-    height: auto !important;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-  }
-}
-
-/* Typography scaling for very small devices */
-@media (max-width: 400px) {
-  body, html {
-    font-size: 14px;
-  }
-  .intro-page h1,
-  .page h1,
-  .discipline-quote-box h1,
-  .street-text,
-  .emotional-text,
-  .healing-content {
-    font-size: 1.8rem !important;
-  }
-  .intro-page p,
-  .page p,
-  .discipline-quote-box p,
-  .street-text p,
-  .emotional-text p,
   .healing-content p {
-    font-size: 1rem !important;
+    max-width: 100%;
   }
 }
 
-/* Hide scrollbar for overlay text on touch devices */
-@media (hover: none) {
-  .overlay-text::-webkit-scrollbar {
-    display: none;
+.footer {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #4b12e7;
+}
+/* 🔧 Mobile Responsiveness */
+@media (max-width: 600px) {
+
+  .page, .pagen {
+    padding: 2rem 1rem;
+  }
+
+  .page h1, .pagen h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .page h2 {
+    font-size: 1.5rem;
+  }
+
+  .page p, .overlay-text, .financial-text, .lonely-text, .emotional-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .split-section {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .image-side {
+    height: 200px;
+  }
+
+  .cover h1 {
+    font-size: 2.2rem;
+    padding: 0 1rem;
+  }
+
+  .overlay-text {
+    padding: 1.5rem;
+    font-size: 1rem;
+    max-height: none;
+  }
+
+  .float-left, .float-right {
+    float: none;
+    display: block;
+    width: 100%;
+    margin: 1rem 0;
+  }
+
+  .loneliness-display {
+    flex-direction: column;
+  }
+
+  .lonely-text {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+
+  .sms-box {
+    padding: 1.5rem;
+    font-size: 1rem;
+  }
+
+  .discipline-quote-box h1 {
+    font-size: 2rem;
+  }
+
+  .discipline-quote-box p {
+    font-size: 1rem;
+  }
+
+  .street-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .street-text p {
+    font-size: 1rem;
+  }
+
+  .financial-survival {
+    grid-template-columns: 1fr;
+  }
+
+  .column {
+    padding: 1rem;
+  }
+
+  .financial-image {
+    height: 180px;
+  }
+
+  .emotional-iq-section {
+    flex-direction: column;
+    padding: 2rem 1rem;
+  }
+
+  .emotional-text h1 {
+    font-size: 2rem;
+  }
+
+  .emotional-image {
+    height: 300px;
+  }
+
+  .healing-section {
+    padding: 2rem 1rem;
+  }
+
+  .healing-content h1 {
+    font-size: 2rem;
+  }
+
+  .healing-content p {
+    font-size: 1rem;
+  }
+
+  .footer {
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.85rem;
   }
 }
-    </style>
+</style>
 </head>
 <body>
 
@@ -784,6 +903,7 @@ body, html {
     <p><strong>Emotional Intelligence (EQ)</strong> is the ability to identify, understand, manage, and use emotions effectively — both your own and others’. It’s the quiet force behind strong communication, empathy, and leadership.</p>
     <p>Unlike <strong>IQ</strong>, which measures logic and reasoning, EQ focuses on how well you connect, resolve conflict, and regulate emotions under pressure. It helps you read a room, respond rather than react, and build lasting relationships.</p>
     <p>In truth, IQ might open doors, but EQ determines how long you stay. High emotional intelligence equips you to lead with calm, listen with care, and navigate life with resilience. It’s not just a skill — it’s a superpower.</p>
+    <p>Remember that, mental frame is the software that runsyour logical components,therefore, even if you have a Gregorian physical frame while your <strong>MENTAL</strong> frame remains corrupted, your logos,pathos, and ethos  — (basically your logical components) will remain faulty.</p>
   </div>
 
   <div class="emotional-image" style="background-image: url('DSC_8787.jpg');">
@@ -810,12 +930,11 @@ body, html {
     <h1>Note</h1>
     <p>Every word here came from a personal place — battles fought, wisdom earned, strength tested.
        I hope this finds you where you are and reminds you: <b style="color: rgb(16, 16, 165);">your story matters.</b><br/>
-      Above all, The scripture inspires that you should;<br/>
+      Above all;<br/>
       Remember your creator before the silver cord is loosed.<br/>
        or the golden bowl is broken,<br/>
         or the pitcher shattered at the fountain,<br/>
-       or the wheel broken at the well.<br/>
-       ECC 12:6</p>
+       or the wheel broken at the well.</p>
        <div class="footer">Written by Caleb Nyakwara</div>
     <div class="footer">© 2025 Resilience Magazine. All Rights Reserved.</div>
     
